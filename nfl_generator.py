@@ -5,10 +5,14 @@ def generate_nfl_lineup(QBs,RBs,WRs,TEs,DSTs,salary,salary_cap,points,players):
     ''' Computes the optimal lineup based on salaries and projected points.
     
     Args:
-        infile: a pandas dataframe in the same format as the downloadable CSV file from DraftKings
+        QBs,RBs,WRs,TEs,DSTs: Dictionaries with binary values indicating player positions
+        salary: A dictionary indicating player salaries
+        salary_cap: An integer indicating maximum allowable bankroll
+        points: A dictionary indicating player projected points
+        players: An array listing all players available to draft
         
     Returns:
-        An array consisting of player IDs of players in the optimal DraftKings lineup
+        An array consisting of player IDs in the optimal DraftKings lineup
     '''
     
     # Define the problem
@@ -33,7 +37,7 @@ def generate_nfl_lineup(QBs,RBs,WRs,TEs,DSTs,salary,salary_cap,points,players):
     
     status = prob.solve()
     
-    # Print IDs of players in lineup
+    # Create array that consists of IDs of players in lineup
     lineup = []
     for player in players:
         if value(include[player]) == 1:
@@ -42,6 +46,8 @@ def generate_nfl_lineup(QBs,RBs,WRs,TEs,DSTs,salary,salary_cap,points,players):
     return lineup
 
 def main():
+    
+    # INPUTS
     infile = pd.read_csv("./data/DKSalaries_nfl.csv")
     salary_cap = 50000
     
