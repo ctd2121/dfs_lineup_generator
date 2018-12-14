@@ -1,12 +1,7 @@
-# dfs_lineup_generator
-Building daily fantasy sports lineups with integer programming
+# Winning Daily Fantasy Sports Contests Using Integer Programming
 
-To do:
+1) Download the CSV file from DraftKings and place it in '/data'. Rename it as 'DKSalaries_nfl.csv'. Feel free to update cells in column I with your own point projections instead of the default values that DraftKings provides.
 
--Add functionality for other sports
+2) Run script.
 
--Add functionality for FanDuel
-
--Add functionality to create multiple lineups, with maximum intersection of x players in each
-
--Take the dual of this IP and compare running times
+3) The script returns an array consisting nine player IDs which correspond to the nine players in the optimal lineup.
