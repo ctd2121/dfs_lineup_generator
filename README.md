@@ -4,4 +4,4 @@
 
 2) Run script.
 
-3) The script returns an array consisting nine player IDs which correspond to the nine players in the optimal lineup.
+3) The script returns an array consisting of nine player IDs which correspond to the nine players in the optimal lineup.
